@@ -1,9 +1,12 @@
 class RepositoriesController < ApplicationController
   def index
+    return render :index unless params[:repositories]
+
     search_service = SearchService.new(search_params)
     result = search_service.call
     @repos = result['items']
     @total_count = result['total_count']
+
     render_failure unless @repos.any?
   end
 

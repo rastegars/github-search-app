@@ -6,7 +6,7 @@
 <h3><%= @total_count %> repository results</h3>
  
 <ul>
-  <% @repos.each do |repo| %>
+  <% @repos && @repos.each do |repo| %>
     <li class='item'>
       <div>
         <h3><%= link_to repo['full_name'], repo['html_url'] %></h3>
