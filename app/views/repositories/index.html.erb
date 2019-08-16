@@ -1,5 +1,5 @@
 <%= form_with scope: :repositories, method: :get, local: true do |form| %>
-  <%= form.label :search, class: 'hidden' %>
-  <%= form.text_field :search %>
+  <%= form.label :q, class: 'hidden' %>
+  <%= form.text_field :q %>
   <%= form.submit 'Search' %>
 <% end %>
