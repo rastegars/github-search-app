@@ -32,4 +32,7 @@ COPY . ./
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
+
+ENV RAILS_ENV production
+RUN rails assets:precompile
 EXPOSE 3000
