@@ -1,3 +1,54 @@
-.hidden{
+.hidden {
   display: none;
+}
+
+.item {
+  padding: 15px;
+  list-style: none;
+  border-top: 1px solid #e1e4e8;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+form.search-input input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+}
+
+/* Style the submit button */
+form.search-input button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+form.search-input button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.search-input::after {
+  content: "";
+  clear: both;
+  display: table;
 }
