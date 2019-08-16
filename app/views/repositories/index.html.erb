@@ -3,3 +3,24 @@
   <%= form.text_field :q %>
   <%= form.submit 'Search' %>
 <% end %>
+
+<h1><%= @total_count %> repository results</h1>
+ 
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+ 
+  <tbody>
+    <% @repos.each do |repo| %>
+      <tr>
+        <td><%= link_to repo['full_name'], repo['html_url'] %></td>
+        <td><%= repo['description'] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

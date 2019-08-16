@@ -14,7 +14,8 @@ class SearchService
     uri.query = URI.encode_www_form(params)
 
     res = Net::HTTP.get_response(uri)
-    res.body if res.is_a?(Net::HTTPSuccess)
+    response_body = res.body if res.is_a?(Net::HTTPSuccess)
+    JSON.parse(response_body)
   end
 
   private

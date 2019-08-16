@@ -1,8 +1,9 @@
 class RepositoriesController < ApplicationController
   def index
     search_service = SearchService.new(search_params)
-    @results = search_service.call
-    puts results
+    result = search_service.call
+    @repos = result['items']
+    @total_count = result['total_count']
   end
 
   private
